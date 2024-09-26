@@ -1,6 +1,5 @@
 import requests
 import os
-from dotenv import load_dotenv
 
 # Load environment variables from .env file
 load_dotenv()
@@ -32,8 +31,8 @@ headers = {
     "origin": "https://leetcode.com",
     "referer": "https://leetcode.com/problems/two-sum/submissions/1402595395/",
     "user-agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Mobile Safari/537.36",
-    "x-csrftoken": csrf_token,
-    "cookie": cookie
+    "x-csrftoken": {csrf_token},
+    "cookie": {cookie}
 }
 
 # Send the POST request
