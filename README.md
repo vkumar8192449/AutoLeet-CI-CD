@@ -2,18 +2,19 @@
 
 **AutoLeet-CI/CD** is a project designed to automate submissions to LeetCode, helping to enhance your LeetCode profile by consistently filling the activity graphs with daily submissions.
 
-## Features
 
-- Automatically submits code to LeetCode daily.
-- Utilizes GitHub Actions for continuous integration and deployment (CI/CD).
-- Enhances your LeetCode profile by filling activity graphs.
-- Includes a random function to hit the submission endpoint a varying number of times each day.
+    ↪️Automatically submits code to LeetCode daily.
+    ↪️Utilizes GitHub Actions for continuous integration and deployment (CI/CD).
+    ↪️Enhances your LeetCode profile by filling activity graphs.
+    ↪️Includes a random function to hit the submission endpoint a varying number of times each day.
 
 ## Technologies Used
 
-- **Python**: The main programming language for the script.
-- **GitHub Actions**: For automating the execution of the script daily.
-- **Requests Library**: To handle HTTP requests.
+ 🐍 **Python**: The main programming language for the script.
+
+ 🔂 **GitHub Actions**: For automating the execution of the script daily.
+
+ 🌐 **Requests Library**: To handle HTTP requests.
 
 ## Author
 
