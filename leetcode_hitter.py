@@ -1,9 +1,6 @@
 import requests
 import os
 
-# Load environment variables from .env file
-load_dotenv()
-
 # Retrieve the CSRF token from environment variable
 csrf_token = os.getenv("LEETCODE_CSRF_TOKEN")
 cookie = os.getenv("LEETCODE_COOKIE")
