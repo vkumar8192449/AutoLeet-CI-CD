@@ -26,6 +26,6 @@ jobs:
 
       - name: Run Randomized Executer
         env:
-          LEETCODE_COOKIE: ${{ secrets.LEETCODE_COOKIE }} # Use your secret as an environment variable
-          LEETCODE_CSRF_TOKEN: ${{ secrets.LEETCODE_CSRF_TOKEN }} # Another secret
+          LEETCODE_COOKIE: ${{ env.LEETCODE_COOKIE }} # Use your secret as an environment variable
+          LEETCODE_CSRF_TOKEN: ${{ env.LEETCODE_CSRF_TOKEN }} # Another secret
         run: python randomized_executer.py
