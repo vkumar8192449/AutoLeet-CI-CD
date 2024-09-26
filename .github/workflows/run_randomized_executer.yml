@@ -1,0 +1,28 @@
+name: Run Randomized Executer Daily
+
+on:
+  schedule:
+    - cron: "0 0 * * *" # This runs the action every day at midnight UTC
+  push: # This runs the action on every push
+    branches:
+      - main
+
+jobs:
+  run_script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.8" # Specify your Python version
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt  # If you have dependencies
+
+      - name: Run Randomized Executer
+        run: python randomized_executer.py
