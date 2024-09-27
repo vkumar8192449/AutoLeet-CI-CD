@@ -3,7 +3,7 @@ import subprocess
 import time
 
 # Generate a random number from 1 to 4
-num_runs = random.randint(1, 2)
+num_runs = random.randint(1, 6)
 print(f"Running script.py {num_runs} times.")
 
 # Run script.py the specified number of times
