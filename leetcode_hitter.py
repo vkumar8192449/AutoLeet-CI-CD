@@ -11,10 +11,23 @@ payload = {
     "lang": "cpp",
     "question_id": "1",
     "typed_code": """class Solution {
-    public:
-        vector<int> twoSum(vector<int>& nums, int target) {
-            
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        vector<int> tmp = nums;
+        sort(nums.begin(),nums.end());
+        int l=0 , h=nums.size()-1;
+        while(true){
+            if(nums[l]+nums[h]==target){
+                int x=0, y=nums.size()-1;
+                while(tmp[x]!=nums[l])x++;
+                while(tmp[y]!=nums[h])y--;
+                return {x,y};
+            }
+            else if(nums[l]+nums[h]>target)h--;
+            else l++;
         }
+        return {};
+    }
 };"""
 }
 
