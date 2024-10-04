@@ -1,37 +1,26 @@
 import requests
 import os
+import random
+from sourceCode import sourceCode
+from quesLink import quesLink
 
 # Retrieve the CSRF token from environment variable
 csrf_token = os.getenv("LEETCODE_CSRF_TOKEN")
 cookie = os.getenv("LEETCODE_COOKIE")
 
+ques = random.randint(0, 5)
+
+print(quesLink[ques])
+
 # Define the URL and the payload
-url = "https://leetcode.com/problems/two-sum/submit/"
+url = quesLink[ques]
 payload = {
     "lang": "cpp",
     "question_id": "1",
-    "typed_code": """class Solution {
-public:
-    vector<int> twoSum(vector<int>& nums, int target) {
-        vector<int> tmp = nums;
-        sort(nums.begin(),nums.end());
-        int l=0 , h=nums.size()-1;
-        while(true){
-            if(nums[l]+nums[h]==target){
-                int x=0, y=nums.size()-1;
-                while(tmp[x]!=nums[l])x++;
-                while(tmp[y]!=nums[h])y--;
-                return {x,y};
-            }
-            else if(nums[l]+nums[h]>target)h--;
-            else l++;
-        }
-        return {};
-    }
-};"""
+    "typed_code": sourceCode[ques]
 }
 
-# Define the headers
+# # Define the headers
 headers = {
     "authority": "leetcode.com",
     "accept": "*/*",
@@ -45,9 +34,9 @@ headers = {
     "cookie": cookie
 }
 
-# Send the POST request
+# # Send the POST request
 response = requests.post(url, json=payload, headers=headers)
 
-# Print response
+# # Print response
 print(response.status_code)
 print(response.json())
